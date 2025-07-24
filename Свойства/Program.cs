@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,10 +23,19 @@ namespace Свойства
             Console.WriteLine(Temp.Celsius);
 
             Circle circle1 = new Circle(12);
-            Console.WriteLine(circle1.Rad);
-            Console.WriteLine(circle1.Area);
+            Console.WriteLine($"Радиус {circle1.Rad}");
+            Console.WriteLine($"Площать {circle1.Area}");
 
-           
+            Vehicle vehicle1 = new Vehicle();
+            //vehicle1.Speed = 200;
+            Car car1 = new Car();
+            car1.Gaz(200);
+            Console.WriteLine($"Скорость машины = {car1.Speed}");
+
+            Counter Count1 = new Counter();
+            Console.WriteLine($"Число = {Counter.InstanceCounter}");
+            Counter Count2 = new Counter();
+            Console.WriteLine($"Число = {Counter.InstanceCounter}");
         }
     }
 }

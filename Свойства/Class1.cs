@@ -39,13 +39,32 @@ namespace Свойства
 
         }
     }
-    class Circle
+    public class Circle
     {
-        public double Area => Math.PI * ( 2 * Rad);
+        public double Area => Math.PI * (2 * Rad);
         public double Rad { get; }
         public Circle (double rad)
         {
             Rad = rad;
+        }
+    }
+    public class Vehicle
+    {
+        public double Speed { get; protected set; }
+    }
+    public class Car : Vehicle
+    {
+        public void Gaz(double gaz)
+        {
+            Speed += gaz;
+        }
+    }
+    public class Counter
+    {
+        public static int InstanceCounter { get; private set; }
+        public Counter ()
+        {
+            InstanceCounter ++;
         }
     }
 }
